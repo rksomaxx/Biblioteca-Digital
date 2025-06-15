@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Athena's Mind</title>
 
-  <!-- Favicon -->
-  <link rel="icon" href="capas/favicon.png" type="image/png">
-
-  <!-- Fontes Google -->
+  <!-- Fontes do Google -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
 
   <style>
@@ -36,8 +33,7 @@
       font-family: 'Playfair Display', serif;
       font-size: 3rem;
       margin-bottom: 10px;
-      color: #FFD700;
-
+      color: #FFD700; /* Dourado */
     }
 
     header p {
@@ -45,13 +41,29 @@
       opacity: 0.9;
     }
 
+    .container-principal {
+      padding: 40px 20px;
+      max-width: 1400px;
+      margin: auto;
+    }
+
+    .categoria {
+      margin-bottom: 60px;
+    }
+
+    .categoria-titulo {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: #1f2937;
+      margin: 40px 0 20px 10px;
+      border-left: 6px solid #FFD700;
+      padding-left: 15px;
+    }
+
     .container {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 30px;
-      padding: 50px 20px;
-      max-width: 1200px;
-      margin: 0 auto;
     }
 
     .livro {
@@ -109,6 +121,7 @@
     }
   </style>
 </head>
+
 <body>
 
   <header>
@@ -116,28 +129,46 @@
     <p>Uma coleção de livros e reflexões digitais.</p>
   </header>
 
-  <main class="container">
-    <!-- Livro 1 -->
-    <div class="livro">
-      <img src="capas/capa1.jpg" alt="Capa Fragmentos de Um Mesmo Homem">
-      <h2>Fragmentos de Um Mesmo Homem</h2>
-      <a class="botao" href="livros/fragmento.pdf" target="_blank">Ler agora</a>
-    </div>
+  <main class="container-principal">
 
-    <!-- Livro 2 -->
-    <div class="livro">
-      <img src="capas/capa2.jpg" alt="Capa Filosofia do Cansaço">
-      <h2>Filosofia do Cansaço</h2>
-      <a class="botao" href="livros/cansaço.pdf" target="_blank">Ler agora</a>
-    </div>
+    <!-- Categoria: Filosofia -->
+    <section class="categoria">
+      <h2 class="categoria-titulo">📖 Filosofia</h2>
+      <div class="container">
+        <div class="livro">
+          <img src="capas/capa1.jpg" alt="Capa Fragmentos de Um Mesmo Homem">
+          <h2>Fragmentos de Um Mesmo Homem</h2>
+          <a class="botao" href="livros/fragmento.pdf" target="_blank">Ler agora</a>
+        </div>
 
-    <!-- Adicione mais livros aqui -->
+        <div class="livro">
+          <img src="capas/capa2.jpg" alt="Capa Filosofia do Cansaço">
+          <h2>Filosofia do Cansaço</h2>
+          <a class="botao" href="livros/cansaço.pdf" target="_blank">Ler agora</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Categoria: Psicologia -->
+    <section class="categoria">
+      <h2 class="categoria-titulo">🧠 Psicologia</h2>
+      <div class="container">
+        <!-- Adicione livros de psicologia aqui -->
+      </div>
+    </section>
+
+    <!-- Categoria: Inspiração -->
+    <section class="categoria">
+      <h2 class="categoria-titulo">💡 Inspiração</h2>
+      <div class="container">
+        <!-- Adicione livros de inspiração aqui -->
+      </div>
+    </section>
+
   </main>
 
   <footer>
     © 2025 Athena's Mind. Todos os direitos reservados.
-    <br>
-    <img src="capas/favicon.png" alt="Athena's Mind Logo" width="32" height="32" style="margin-top: 10px;">
   </footer>
 
 </body>
