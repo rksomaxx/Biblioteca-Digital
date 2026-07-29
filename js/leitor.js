@@ -183,3 +183,33 @@ if (btnTelaCheia) {
         }
     });
 }
+// ================= NAVEGAÇÃO POR GESTO (SWIPE / TOUCH) =================
+
+let touchStartX = 0;
+let touchEndX = 0;
+
+// Captura a posição inicial do toque
+document.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+}, false);
+
+// Captura a posição final e verifica a direção do deslize
+document.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    tratarGestoGeral();
+}, false);
+
+function tratarGestoGeral() {
+    const limiteMinimo = 50; // Distância mínima (em pixels) para considerar um deslize
+    const diferencaX = touchEndX - touchStartX;
+
+    // Deslizou da direita para a esquerda -> Próxima Página
+    if (diferencaX < -limiteMinimo) {
+        proximaPagina();
+    }
+    
+    // Deslizou da esquerda para a direita -> Página Anterior
+    if (diferencaX > limiteMinimo) {
+        paginaAnterior();
+    }
+}
