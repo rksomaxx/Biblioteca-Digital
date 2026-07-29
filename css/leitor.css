@@ -90,17 +90,19 @@ body.light-mode .footer {
 }
 
 #viewer {
-  display: flex;
-  justify-content: center;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
-  border-radius: 4px;
-  overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    max-height: calc(100vh - 180px); /* Garante que sobra espaço para o cabeçalho e os controles */
+    overflow: auto; /* Permite rolagem suave se a página for muito alta */
+    margin: auto;
 }
 
 #viewer canvas {
-  display: block;
-  max-width: 100%;
-  height: auto !important;
+    max-width: 100%;
+    height: auto !important; /* Mantém a proporção do PDF sem esticar ou cortar */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
 }
 
 /* CONTROLES / FOOTER */
