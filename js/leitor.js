@@ -38,7 +38,17 @@ function renderPage(num) {
     pdfDoc.getPage(num).then((page) => {
         if (viewer) viewer.innerHTML = '';
 
-        const viewport = page.getViewport({ scale: scale });
+        // Pega as dimensões originais da página do PDF
+        const unscaledViewport = page.getViewport({ scale: 1.0 });
+
+        // Calcula a altura máxima disponível na tela
+        const maxDisplayHeight = window.innerHeight - 180;
+        
+        // Ajusta a escala dinamicamente para a página caber 100% na tela
+        const autoScale = maxDisplayHeight / unscaledViewport.height;
+        const finalScale = Math.min(autoScale, 1.5); // Limita o zoom máximo para não ficar gigante em monitores enormes
+
+        const viewport = page.getViewport({ scale: finalScale });
         const canvas = document.createElement('canvas');
         const ctx = canvas.getContext('2d');
 
